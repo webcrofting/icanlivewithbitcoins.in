@@ -1,0 +1,31 @@
+<h1>Listing bbusinesses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Webpage</th>
+      <th>String</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bbusinesses.each do |bbusiness| %>
+      <tr>
+        <td><%= bbusiness.name %></td>
+        <td><%= bbusiness.address %></td>
+        <td><%= bbusiness.webpage %></td>
+        <td><%= bbusiness.string %></td>
+        <td><%= link_to 'Show', bbusiness %></td>
+        <td><%= link_to 'Edit', edit_bbusiness_path(bbusiness) %></td>
+        <td><%= link_to 'Destroy', bbusiness, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bbusiness', new_bbusiness_path %>
